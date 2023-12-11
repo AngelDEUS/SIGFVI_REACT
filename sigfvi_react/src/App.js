@@ -16,11 +16,7 @@ function App() {
   };
   return (
     <div className="App">
-      {loggedInUser ? (
-        <Layout user={loggedInUser} />
-      ) : (
-        <LoginMain onLogin={handleLogin} />
-      )}
+      {loggedInUser ? (<Layout user={loggedInUser} />) : (<LoginMain onLogin={handleLogin} />)}
     </div>
   );
 }

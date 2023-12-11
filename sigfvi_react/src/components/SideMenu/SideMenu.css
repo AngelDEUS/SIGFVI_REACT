@@ -1,32 +1,20 @@
-/*Variables*/
-
+/* Variables */
 @import url('../../styles/variables.css');
 
 :root {
-
-    /* Colores del Menu*/
     --color-barra-lateral: var(--Color-Sidebar-bg-01);
-
     --color-texto: #9a9a9a;
     --color-texto-menu: #636363;
-
     --color-menu-hover: var(--Color-Sidebar-btn-hover-01);
     --color-menu-hover-texto: rgb(231, 231, 231);
-
     --color-boton: #010206;
     --color-boton-texto: rgb(255, 255, 255);
     --color-boton-texto-hover: rgb(221, 221, 221);
-
     --color-linea: #b0b0b021;
-
     --color-menu-icons: #1f1f21;
     --color-usuario-bg: #1b1b1c;
-
-    /*Colores de scroll*/
     --color-scroll: rgba(192, 192, 192, 0.267);
     --color-scroll-hover: rgba(241, 241, 241, 0.178);
-
-
     --Color-Text-highlight-01: #fe9a1a;
 }
 
@@ -42,20 +30,13 @@
     background-color: var(--color-scroll-hover);
 }
 
-
 /* Contenedor general del menú */
 .Contenedor-Menu {
     height: 100vh;
     display: flex;
 }
 
-/* Contenedor general del menú */
-.Contenedor-Menu {
-    display: flex;
-}
-
 /* Rules */
-
 .rules {
     padding: 20px 15px;
 }
@@ -66,7 +47,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 250px;
+    width: 260px;
     height: 100vh;
     overflow: hidden;
     background-color: var(--color-barra-lateral);
@@ -92,12 +73,11 @@
     width: 0;
 }
 
-/* Nombre de la Página ------> */
+/* Nombre de la Página */
 highlight {
     color: var(--Color-Text-highlight-01);
 }
 
-/* .nom-pagina */
 .barra-lateral .nom-pagina {
     width: 100%;
     height: 85px;
@@ -107,7 +87,6 @@ highlight {
     background-color: var(--Color-Sidebar-nombre-pagina);
     border-bottom: 2px solid var(--Color-Sidebar-Separator-01);
 }
-
 
 .barra-lateral .nombre-pagina {
     height: 45px;
@@ -131,7 +110,7 @@ highlight {
     white-space: unset;
 }
 
-/* -------> Botón nueva venta (botonNuevaVenta) */
+/* Botón nueva venta (botonNuevaVenta) */
 .barra-lateral .boton {
     width: 100%;
     height: 45px;
@@ -152,14 +131,14 @@ highlight {
     font-size: 22px;
 }
 
-/* ---------: Menu de navegación ---> */
+/* Menu de navegación */
 .barra-lateral .navegacion {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-/* -----: scrollbar ---> */
+/* Scrollbar */
 .barra-lateral .navegacion::-webkit-scrollbar {
     width: 5px;
 }
@@ -172,10 +151,8 @@ highlight {
     background-color: var(--color-scroll-hover);
 }
 
-/* ---------: Menu de navegación ---> */
 .barra-lateral .navegacion li {
     list-style: none;
-    display: flex;
     margin-bottom: 2px;
 }
 
@@ -208,22 +185,38 @@ highlight {
     background-color: var(--Color-Sidebar-HF);
 }
 
-/* --------: footer-div ---> */
-.barra-lateral .footer-div {
+/* ------------------------: Sub-menu ------------> */
+.barra-lateral .sub-menu-options {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.barra-lateral .sub-menu-options.active {
+    max-height: 200px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.barra-lateral .sub-menu-options li {
+    height: 40px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
-/* ----------: lineaSeparador --->*/
-.barra-lateral .lineaSeparador {
+.barra-lateral .sub-menu-options a {
+    text-decoration: none;
+    color: var(--color-texto-menu);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 1px;
-    margin: 15px 0;
-    background-color: var(--Color-Sidebar-Separator-02);
+    height: 100%;
 }
 
-/* ----------: Usuario --->*/
-
+/*-------------*/
+/* Usuario */
 .barra-lateral .usuario-fill {
     width: 100%;
     height: 80px;
@@ -274,14 +267,23 @@ highlight {
 
 .barra-lateral .usuario .svg {
     font-size: 20px;
+    transition: transform 0.5s ease;
 }
 
-/* ----> Navbar*/
+.arrow {
+    margin-left: auto;
+}
+
+.barra-lateral .rotate-icon-active .svg {
+    transform: rotate(90deg);
+}
+
+/* Navbar */
 .Navbar {
     margin-left: 800px;
 }
 
-/* Media qrys menu responsive*/
+/* Media queries */
 @media (max-height: 660px) {
     .barra-lateral .nombre-pagina {
         margin-bottom: 10px;
@@ -293,5 +295,4 @@ highlight {
         position: fixed;
         left: -250px;
     }
-
 }

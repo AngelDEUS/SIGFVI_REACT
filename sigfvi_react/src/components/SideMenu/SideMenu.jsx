@@ -10,12 +10,21 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
     const [isSessionClosed, setSessionClosed] = useState(false);
     const navigate = useNavigate();
 
+    const [showSubMenu, setShowSubMenu] = useState(null);
+    const [rotateIcon, setRotateIcon] = useState(false);
+
+    const toggleSubMenu = (menu) => {
+        setShowSubMenu((prevShowSubMenu) => (prevShowSubMenu === menu ? null : menu));
+        setRotateIcon(!rotateIcon);
+    };
+
     useEffect(() => {
         const spans = document.querySelectorAll('.barra-lateral span');
         spans.forEach(span => {
             span.classList.toggle('oculto', miniBarraLateral);
         });
     }, [miniBarraLateral]);
+
     const handleLogout = () => {
         Swal.fire({
             title: 'Cerrar Sesión',
@@ -28,7 +37,6 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
             cancelButtonText: 'No, mantener sesión',
         }).then((result) => {
             if (result.isConfirmed) {
-                // Si el usuario confirma cerrar sesión
                 setSessionClosed(true);
 
                 Swal.fire({
@@ -37,13 +45,11 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'Aceptar',
                 }).then(() => {
-                    // Redirige a la página de inicio de sesión
                     navigate('/Login');
                 });
             }
         });
     };
-
 
     return (
         <>
@@ -79,30 +85,57 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
                                     <span>Dashboard</span>
                                 </Link>
                             </li>
+
                             <li>
-                                <Link to="/GestionUsuarios">
+                                <Link to="#" onClick={() => toggleSubMenu('usuarios')}>
                                     <div className='btnList'>
                                         <i className="bi bi-person-fill svg"></i>
                                     </div>
                                     <span>Gestión de Usuarios</span>
+                                    <div className="arrow">
+                                        <i className={`bi bi-chevron-right rotate-icon${showSubMenu === 'usuarios' ? ' active' : ''}${showSubMenu === 'usuarios' && rotateIcon ? ' rotate-icon-active' : ''}`}></i>
+                                    </div>
                                 </Link>
+                                <ul className={`sub-menu-options${showSubMenu === 'usuarios' ? ' active' : ''}`}>
+                                    <li><Link to="/GestionUsuarios/Item1">Item 1</Link></li>
+                                    <li><Link to="/GestionUsuarios/Item2">Item 2</Link></li>
+                                </ul>
                             </li>
+
                             <li>
-                                <Link to="/Inventario">
+                                <Link to="#" onClick={() => toggleSubMenu('inventario')}>
                                     <div className='btnList'>
                                         <i className="bi bi-box-seam-fill svg"></i>
                                     </div>
                                     <span>Inventario</span>
+                                    <div className="arrow">
+                                        <i className={`bi bi-chevron-right rotate-icon${showSubMenu === 'inventario' ? ' active' : ''}${showSubMenu === 'inventario' && rotateIcon ? ' rotate-icon-active' : ''}`}></i>
+                                    </div>
                                 </Link>
+                                <ul className={`sub-menu-options${showSubMenu === 'inventario' ? ' active' : ''}`}>
+                                    <li><Link to="/Inventario/Item1">Item 1</Link></li>
+                                    <li><Link to="/Inventario/Item2">Item 2</Link></li>
+                                </ul>
                             </li>
-                            <li>
-                                <Link to="/VentasFacturacion">
+
+                            <li className={`ventas-facturacion ${showSubMenu ? 'active' : ''}`}>
+                                <Link to="#" onClick={() => toggleSubMenu('ventas')}>
                                     <div className='btnList'>
                                         <i className="bi bi-cart-fill svg"></i>
                                     </div>
                                     <span>Ventas y Facturación</span>
+                                    <div className="arrow">
+                                        <i className={`bi bi-chevron-right rotate-icon${showSubMenu ? 'rotate-icon-active' : ''}`}></i>
+                                    </div>
+
                                 </Link>
+                                <ul className={`sub-menu-options${showSubMenu === 'ventas' ? ' active' : ''}`}>
+                                    <li ><Link to="/VentasFacturacion/Item1">Item 1</Link></li>
+                                    <li ><Link to="/VentasFacturacion/Item2">Item 2</Link></li>
+                                    <li ><Link to="/VentasFacturacion/Item3">Item 3</Link></li>
+                                </ul>
                             </li>
+
                             <li>
                                 <Link to="/Informes">
                                     <div className='btnList'>
