@@ -215,6 +215,19 @@ highlight {
     height: 100%;
 }
 
+.arrow {
+    margin-left: auto;
+    transition: max-height 0.5s ease;
+}
+
+.rotate-icon {
+    transform: rotate(90deg);
+}
+
+.rotate-icon-active {
+    transform: rotate(90deg);
+}
+
 /*-------------*/
 /* Usuario */
 .barra-lateral .usuario-fill {
@@ -270,13 +283,7 @@ highlight {
     transition: transform 0.5s ease;
 }
 
-.arrow {
-    margin-left: auto;
-}
 
-.barra-lateral .rotate-icon-active .svg {
-    transform: rotate(90deg);
-}
 
 /* Navbar */
 .Navbar {
