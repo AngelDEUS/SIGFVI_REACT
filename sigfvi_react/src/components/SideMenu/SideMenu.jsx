@@ -97,8 +97,9 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
                                     </div>
                                 </Link>
                                 <ul className={`sub-menu-options${showSubMenu === 'usuarios' ? ' active' : ''}`}>
-                                    <li><Link to="/GestionUsuarios/Item1">Item 1</Link></li>
-                                    <li><Link to="/GestionUsuarios/Item2">Item 2</Link></li>
+                                    <li><Link to="/GestionUsuarios/TablaUsuarios">Item 1</Link></li>
+                                    <li><Link to="/GestionUsuarios/TablaProveedores">Item 2</Link></li>
+                                    <li><Link to="/GestionUsuarios/TablaDeudores">Item 3</Link></li>
                                 </ul>
                             </li>
 

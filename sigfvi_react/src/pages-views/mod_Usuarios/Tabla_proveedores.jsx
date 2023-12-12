@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../css/Tabla.css';
-import datos from '../DatosProveedor.json';
+import './Tabla.css';
+import datos from './data/DatosProveedor.json';
 import { Tabla_proveedor_item } from './Tabla_proveedor_item';
 import Register_proveedor from './Register_proveedor';
 

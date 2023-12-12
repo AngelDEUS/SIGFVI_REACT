@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
-import { Tabla_deudor_item } from './Tabla_deudor_item';
-import datos from './data/DatosDeudor.json';
-import Register_deudor from './Register_deudor';
+import React, {  useState } from 'react';
+import datos from './data/DatosUser.json';
+import { Tabla_users_item } from './Tabla_users_item';
 import './Tabla.css';
+import { Register_user } from './Register_user';
 
-function Tabla_deudor() {
+function Tabla_users() {
 
   const [registerform, setRegisterform] = useState(false)
   
   return (
     <div className='main-container'>
-        <div className='main-container'>
-      <h1 className='main-title'>Deudores</h1>
+      <h1 className='main-title'>Empleados</h1>
       <p className='main-text'>
-        Esta pestaña muestra los deudores de la tienda los cuales estaran registrados aqui. Tambien se permite su actualizacion y edicion respectiva
+        Esta parte del modulo muestra los empleados del sistema y permite su respectivo registro y actualizacion.
       </p><br/>
       <hr/>
       <div className='table-container'>
@@ -24,9 +23,10 @@ function Tabla_deudor() {
               <button className='boton b1'>Buscar</button>
             </div>
             <div className='teush'>
-            <button type="button" className="boton b4" id="lanzar-modal" name="agregar" onClick={()=> setRegisterform(true)}>Agregar</button>
+              <button type="button" className="boton b4" id="lanzar-modal" name="agregar" onClick={()=> setRegisterform(true)}>Agregar</button>
             </div>
-            <Register_deudor isOpen={registerform} closeModal={()=> setRegisterform(false)} />
+            <Register_user isOpen={registerform} closeModal={()=> setRegisterform(false)}/>
+
           </form>
         </div>
 
@@ -34,19 +34,19 @@ function Tabla_deudor() {
           <table className='tabla'>
             <thead>
                 <th>
-                    <h2>id</h2>
-                </th>
-                <th>
                     <h2>Nombre</h2>
                 </th>
                 <th>
-                    <h2>Dirección</h2>
+                    <h2>id</h2>
+                </th>
+                <th>
+                    <h2>Contraseña</h2>
                 </th>
                 <th>
                     <h2>Telefono</h2>
                 </th>
                 <th>
-                    <h2>Deuda</h2>
+                    <h2>Correo</h2>
                 </th>
                 <th>
                     <h2>Estado</h2>
@@ -59,15 +59,16 @@ function Tabla_deudor() {
               {
                 datos.map((datos, index) => {
                   return(
-                    <Tabla_deudor_item
+                    <Tabla_users_item 
                       key={datos.id}
                       id={datos.id}
-                      name={datos.Nombre}
-                      cel={datos.Telefono}
-                      direccion={datos.Direccion}
-                      deuda={datos.Deuda}
-                      state={datos.Estado}
-                    />
+                      name={datos.first_name}
+                      last_name={datos.last_name}
+                      password={datos.pass}
+                      cel={datos.cel}
+                      email={datos.email}
+                      state={datos.status}
+                      />
                   )
                 })
               }
@@ -76,8 +77,7 @@ function Tabla_deudor() {
         </section>
       </div>
     </div>
-    </div>
   )
 }
 
-export default Tabla_deudor
+export default Tabla_users

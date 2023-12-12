@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/Tabla.css';
+import './Tabla.css';
 import Edit_user from './Edit_user';
 import Swal from 'sweetalert2';
 
