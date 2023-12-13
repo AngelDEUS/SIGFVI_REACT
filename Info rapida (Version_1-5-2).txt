@@ -1,0 +1,14 @@
++++++++++++++++++++++++++++++++++++*+++++++++++++++++++++++++++++++++++
+========================/ Notas de la version \========================
+=======> Versión Actual: 1.5.2.
+=======> Notas de la versión: .
+______________________________________________________________________________
+=======> Ramas:
+                           /main ¿ ("Rama BackUp")
+                             /main_desarrollo ¿ ("Rama para implementar cambios")
+                                 /mod_usuarios
+                                 /mod_inventario
+                                 /mod_ventasyfacturacion
+                                 /mod_informes
+______________________________________________________________________________
+=======> Integrantes:
