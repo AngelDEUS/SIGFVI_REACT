@@ -66,7 +66,7 @@ body {
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap');
 
 /* Reseteamos los margin y paddings de todas las etiquetas */
 * {
@@ -230,7 +230,7 @@ body {
 /* -----: MainContent ---> */
 .main-content {
   transition: margin-left 0.5s ease;
-  margin: 20px 20px 20px 270px;
+  margin: 20px 20px 20px 280px;
   padding: 20px;
   background-color: var(--Color-MainContent-01);
   border-radius: 15px;

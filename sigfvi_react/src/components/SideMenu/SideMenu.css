@@ -263,7 +263,7 @@ highlight {
 }
 
 .barra-lateral .usuario .nombre-email {
-    width: 80%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     margin-left: 10px;
@@ -281,6 +281,15 @@ highlight {
 .barra-lateral .usuario .svg {
     font-size: 20px;
     transition: transform 0.5s ease;
+    color: var(--Color-Sidebar-Separator-01);
+    transform: rotate(-180deg);
+}
+
+
+.flechaUser {
+    border: 1px solid var(--Color-Sidebar-Separator-01);
+    padding: 4px;
+    border-radius: 50%;
 }
 
 

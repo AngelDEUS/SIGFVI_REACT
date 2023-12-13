@@ -187,7 +187,7 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
                                     <span className='rol'>Administrador</span>
                                     <span className='nombre'>Angel Ayala</span>
                                 </div>
-                                <i className="bi bi-chevron-right svg"></i>
+                                <i className="bi bi-chevron-right svg flechaUser"></i>
                             </div>
                         </div>
                     </div>

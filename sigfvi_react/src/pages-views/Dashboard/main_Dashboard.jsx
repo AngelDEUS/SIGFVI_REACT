@@ -1,9 +1,16 @@
 import React from 'react'
+import TituloyDesc from '../../components/Titles/TituloyDesc'
 
 const main_Dashboard = () => {
+    const titulo = 'Dashboard';
+    const descipcion = 'descipción del dashboard';
+
     return (
-        <div style={{ backgroundColor: 'red' }}>
-            mai_Dashboard</div>
+        <div>
+            <div className='encabezado__titulos'>
+                <TituloyDesc titulo={titulo} descripcion={descipcion} />
+            </div>
+        </div>
     )
 }
 
