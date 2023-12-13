@@ -6,9 +6,13 @@ import Home from '../pages-views/Home/Home';
 import Dashboard from '../pages-views/Dashboard/main_Dashboard';
 import Usuarios from '../pages-views/mod_Usuarios/mai_Usuarios';
 import Inventario from '../pages-views/mod_inventario/mai_Inventario';
+
 import VentasFacturacion from '../pages-views/mod_Ventas-Facturacion/main_VentasFacturacion';
+import Ventas from '../pages-views/mod_Ventas-Facturacion/main_ventas'
+
 import Informes from '../pages-views/mod_Informes/main_informes';
 import Ayuda from '../pages-views/Ayuda/MainAyuda';
+
 
 export function MyRoutes({ onLogin }) {
     return (
@@ -18,7 +22,10 @@ export function MyRoutes({ onLogin }) {
             <Route path='/Dashboard' element={<Dashboard />} />
             <Route path='/GestionUsuarios' element={<Usuarios />} />
             <Route path='/Inventario' element={<Inventario />} />
+
             <Route path='/VentasFacturacion' element={<VentasFacturacion />} />
+            <Route path='/VentasFacturacion/ventas' element={<Ventas />} />
+
             <Route path='/Informes' element={<Informes />} />
             <Route path='/Ayuda' element={<Ayuda />} />
             <Route path='*' element={<Erro404 />} />

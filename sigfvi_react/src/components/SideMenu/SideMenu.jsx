@@ -68,10 +68,12 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
                 </div>
                 <div className='rules'>
                     <div>
-                        <button className='boton'>
-                            <i className="bi bi-patch-plus-fill svg"></i>
-                            <span className=''>Nueva Venta</span>
-                        </button>
+                        <Link to='/VentasFacturacion/ventas'>
+                            <button className='boton'>
+                                <i className="bi bi-patch-plus-fill svg"></i>
+                                <span className=''>Nueva Venta</span>
+                            </button>
+                        </Link>
                         <div className='lineaSeparador'></div>
                     </div>
 
@@ -130,9 +132,14 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
 
                                 </Link>
                                 <ul className={`sub-menu-options${showSubMenu === 'ventas' ? ' active' : ''}`}>
-                                    <li ><Link to="/VentasFacturacion/Item1">Item 1</Link></li>
-                                    <li ><Link to="/VentasFacturacion/Item2">Item 2</Link></li>
-                                    <li ><Link to="/VentasFacturacion/Item3">Item 3</Link></li>
+                                    <li ><Link to="/VentasFacturacion/ventas">
+                                        <div className='circle__sidemenu'></div>
+                                        <span>Ventas</span>
+                                    </Link></li>
+                                    <li ><Link to="/VentasFacturacion/Item2">
+                                        <div className='circle__sidemenu'></div>
+                                        <span>Lista de ventas</span>
+                                    </Link></li>
                                 </ul>
                             </li>
 

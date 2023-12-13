@@ -228,6 +228,20 @@ highlight {
     transform: rotate(90deg);
 }
 
+/* ---------: SUBMENU Circle ----->*/
+.circle__sidemenu {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--Color-Sidebar-HF);
+    margin: 10px;
+}
+
+.sub-menu-options:hover li:hover .circle__sidemenu {
+    border: 4px solid var(--Color-Sidebar-HF);
+    background-color: var(--Color-Sidebar-Separator-01);
+}
+
 /*-------------*/
 /* Usuario */
 .barra-lateral .usuario-fill {

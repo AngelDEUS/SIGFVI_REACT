@@ -1,0 +1,108 @@
+@import url('../../styles/variables.css');
+
+:root {
+    --Color-input-02: #bec0c5;
+    --Color-input-01: var(--Color-Text-02);
+
+    --Color-bg-buscar-01: #ffffff;
+    --Color-bg-buscar-02: #dbdcde;
+
+    --Color-btn-texts: #ffffff;
+    --Color-btn-01-abrir: #fc7c02;
+    --Color-btn-02-limpiar: #5cb0ff;
+    --Color-btn-03-nuevoT: #b85cff;
+    --Color-btn-04-cancela: #ff5c5c;
+}
+
+/* -----------------: TOP STYLES ------------> */
+.busqueda__prod {
+    padding: 10px;
+    background-color: var(--Color-bg-buscar-02);
+    border-radius: 15px;
+    display: flex;
+}
+
+.buscar_productos {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ---------: Buscar -----> */
+.buscar {
+    background-color: var(--Color-bg-buscar-01);
+    padding: 10px;
+    display: flex;
+    width: 350px;
+    border-radius: 15px;
+}
+
+.buscar_i {
+    margin: 0;
+    padding: 0;
+    color: var(--Color-bg-buscar-02);
+    border: 1px solid var(--Color-bg-buscar-02);
+}
+
+.sep_vertical_b {
+    width: 2px;
+    height: 20px;
+    margin: 0 10px;
+    background-color: var(--Color-bg-buscar-02);
+}
+
+.right__b input {
+    color: var(--Color-input-01);
+    outline: none;
+    padding: 10px;
+    width: 500px;
+}
+
+.right__b input::placeholder {
+    color: var(--Color-input-02);
+}
+
+/* ---------: Botones-----> */
+.btn_f {
+    color: var(--Color-btn-texts);
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.abrir {
+    background-color: var(--Color-btn-01-abrir);
+    box-shadow: 0px 0px 28px 0px var(--Color-btn-01-abrir);
+}
+
+.abrir:hover {
+    box-shadow: 0px 0px 40px 10px var(--Color-btn-01-abrir);
+}
+
+.limpiar {
+    background-color: var(--Color-btn-02-limpiar);
+    box-shadow: 0px 0px 28px 0px var(--Color-btn-02-limpiar);
+}
+
+.limpiar:hover {
+    box-shadow: 0px 0px 40px 10px var(--Color-btn-02-limpiar);
+}
+
+.nuevo {
+    background-color: var(--Color-btn-03-nuevoT);
+    box-shadow: 0px 0px 28px 0px var(--Color-btn-03-nuevoT);
+}
+
+.nuevo:hover {
+    box-shadow: 0px 0px 40px 10px var(--Color-btn-03-nuevoT);
+}
+
+.cancelar {
+    background-color: var(--Color-btn-04-cancela);
+    box-shadow: 0px 0px 28px 0px var(--Color-btn-04-cancela);
+}
+
+.cancelar:hover {
+    box-shadow: 0px 0px 40px 10px var(--Color-btn-04-cancela);
+}

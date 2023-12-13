@@ -2,7 +2,9 @@ import React from 'react'
 
 const main_VentasFacturacion = () => {
   return (
-    <div>main_VentasFacturacion</div>
+    <div>
+
+    </div>
   )
 }
 
