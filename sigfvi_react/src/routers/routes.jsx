@@ -9,10 +9,11 @@ import Inventario from '../pages-views/mod_inventario/mai_Inventario';
 
 import VentasFacturacion from '../pages-views/mod_Ventas-Facturacion/main_VentasFacturacion';
 import Ventas from '../pages-views/mod_Ventas-Facturacion/main_ventas'
+import Tabs_ventas from '../pages-views/mod_Ventas-Facturacion/tabs_ventas'
 
-import Informes from '../pages-views/mod_Informes/main_informes';
+// import Informes from '../pages-views/mod_Informes/main_informes';
 import Ayuda from '../pages-views/Ayuda/MainAyuda';
-<<<<<<< HEAD
+
 import Informe from '../pages-views/mod_Informes/Informe';
 
 import InformeVentas from '../pages-views/mod_Informes/InformeVentas';
@@ -23,11 +24,9 @@ import InformeEmpleados from '../pages-views/mod_Informes/InformeEmpleados';
 
 import Tabla_inventario from "../pages-views/mod_inventario/tablaInventario";
 
-=======
 import Tabla_users from '../pages-views/mod_Usuarios/Tabla_users';
 import Tabla_proveedores from '../pages-views/mod_Usuarios/Tabla_proveedores';
 import Tabla_deudor from '../pages-views/mod_Usuarios/Tabla_deudor';
->>>>>>> remotes/origin/mod_usuarios
 
 export function MyRoutes({ onLogin }) {
     return (
@@ -44,12 +43,14 @@ export function MyRoutes({ onLogin }) {
 
             <Route path='/VentasFacturacion' element={<VentasFacturacion />} />
             <Route path='/VentasFacturacion/ventas' element={<Ventas />} />
+            <Route path='/VentasFacturacion/tabs' element={<Tabs_ventas />} />
 
-            <Route path='/Informes' element={<Informe/>} />
-            <Route path='/GestionInformes/InformeVentas' element={<InformeVentas/>} />
-            <Route path='/GestionInformes/InformeDeudores' element={<InformeDeudores/>} />
-            <Route path='/GestionInformes/InformeEmpleados' element={<InformeEmpleados/>} />
-            <Route path='/GestionInformes/InformeInventario' element={<InformeInventario/>} />
+            <Route path='/Informes' element={<Informe />} />
+            <Route path='/GestionInformes/InformeVentas' element={<InformeVentas />} />
+            <Route path='/GestionInformes/InformeDeudores' element={<InformeDeudores />} />
+            <Route path='/GestionInformes/InformeEmpleados' element={<InformeEmpleados />} />
+            <Route path='/GestionInformes/InformeInventario' element={<InformeInventario />} />
+
             <Route path='/Ayuda' element={<Ayuda />} />
             <Route path='*' element={<Erro404 />} />
             <Route path='/' element={<LoginMain onLogin={onLogin} />} />

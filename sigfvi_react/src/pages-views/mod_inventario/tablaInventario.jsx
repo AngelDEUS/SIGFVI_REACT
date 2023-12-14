@@ -25,7 +25,7 @@ const Tabla_Inventario = () => {
 
 
   return (
-    <div>
+    <div className="mod__inventario--s">
       <div className="encabezado__titulos">
         <TituloyDesc titulo={titulo} descripcion={descipcion} />
       </div>
@@ -79,7 +79,7 @@ const Tabla_Inventario = () => {
                     <td>{inv.fechaCaducidad}</td>
                     <td>{inv.proveedor}</td>
                     <td>
-                    <button className="botonBorrar" onClick={() => borrar(inv.codigo)}>Borrar</button>
+                      <button className="botonBorrar" onClick={() => borrar(inv.codigo)}>Borrar</button>
                     </td>
                   </tr>
                 );
