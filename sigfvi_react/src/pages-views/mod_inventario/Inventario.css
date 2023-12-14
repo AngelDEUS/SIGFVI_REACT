@@ -1,15 +1,21 @@
-.containerTitulo {
+.mod__inventario--s .containerTitulo {
   margin-bottom: 30px;
 }
-p {
+
+.mod__inventario--s .mod__inventario p {
   font-size: 22px;
 }
+<<<<<<< HEAD
 .subtitulo h3 {
+=======
+
+.mod__inventario--s .containerTitulo h3 {
+>>>>>>> mod_ventas
   font-size: 25px;
   margin: 5px;
 }
 
-.mainModal {
+.mod__inventario--s .mainModal {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
@@ -18,7 +24,8 @@ p {
     "mainTitulo mainTitulo"
     "mainIzquierda mainDerecha";
 }
-.mainTitulo {
+
+.mod__inventario--s .mainTitulo {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -30,25 +37,23 @@ p {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-.MainBoton {
+
+.mod__inventario--s .MainBoton {
   grid-area: MainBoton;
 }
 
-.modalForm{
- display: flex;
- flex-direction: row;
- justify-content: center;
- width: 800px;
+.mod__inventario--s .modalForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 800px;
 }
-.mainIzquierda {
 
-}
-.mainDerecha {
+.mainIzquierda {}
 
-}
-.MainBoton2 {
+.mainDerecha {}
 
-}
+.MainBoton2 {}
 
 .mainModal input {
   padding: 5px;
@@ -70,6 +75,7 @@ p {
   border-radius: 30px;
   font-weight: 700;
 }
+
 .boton_modal2 {
   background-color: #df4646;
   color: white;
@@ -82,6 +88,7 @@ p {
   border-radius: 30px;
   font-weight: 700;
 }
+
 .botonBorrar {
   background-color: #df4646;
   color: white;
@@ -94,7 +101,8 @@ p {
   border-radius: 30px;
   font-weight: 700;
 }
-.botonBorrar:hover{
+
+.botonBorrar:hover {
   opacity: 50%;
 }
 

@@ -1,8 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import './Informes.css';
+<<<<<<< HEAD
 import {Link} from 'react-router-dom';
 import TituloyDesc from '../../components/Titles/TituloyDesc';
+=======
+import { Link } from 'react-router-dom';
+>>>>>>> mod_ventas
 
 function Informe() {
   const [fechaInicio, setFechaInicio] = useState('');
@@ -55,8 +59,8 @@ function Informe() {
     alert(`Fecha de inicio: ${fechaInicio}\nFecha de fin: ${fechaFin}`);
   };
   const mostrarAlerta = (mensaje) => {
-  alert(mensaje);
-};
+    alert(mensaje);
+  };
 
   const mostrarGraficoHandler = () => {
     setMostrarGrafico(!mostrarGrafico);
@@ -64,6 +68,7 @@ function Informe() {
 
   return (
 
+<<<<<<< HEAD
     <main className='contenedor_informe'>
       <TituloyDesc
         titulo='Informes'
@@ -71,6 +76,14 @@ function Informe() {
       />
       
       
+=======
+    <div className='contenedor_informe'>
+      <h1>Informes</h1>
+      <p>
+        Este es el módulo encargado de realizar los <s>Informes</s> de los productos y generar los informes de cada reporte.
+      </p>
+      <br />
+>>>>>>> mod_ventas
       <hr />
       <section className="">
         <div className='mod__Ventas'>
@@ -99,6 +112,7 @@ function Informe() {
               </div>
             </div>
 
+<<<<<<< HEAD
             <button onClick={mostrarRango} className='mostrar'>Mostrar</button>
           </div>
 
@@ -115,6 +129,38 @@ function Informe() {
             <button className="b4" onClick={mostrarGraficoHandler}>
                 Resumen %</button>
               
+=======
+          <label htmlFor="fecha-fin">Fecha de fin:</label>
+          <input
+            type="date"
+            id="fecha-fin"
+            name="fecha-fin"
+            onChange={(e) => setFechaFin(e.target.value)}
+          />
+
+          <button onClick={mostrarRango}>Mostrar</button>
+        </div>
+
+        <div className="btones">
+          <div className="button-container">
+            <Link to='/GestionInformes/InformeVentas' className='prueba'>
+              <button className="b1" id="btn" >Reporte de Ventas</button>
+            </Link>
+            <Link to='/GestionInformes/InformeEmpleados' className='prueba'>
+              <button className="b1" id="btn">Reporte de Empleados</button>
+            </Link>
+          </div>
+          <div className="button-container">
+            <Link to='/GestionInformes/InformeDeudores' className='prueba'><button className="b1" id="btn" >Reporte de Deudores</button></Link>
+            <Link to='/GestionInformes/InformeInventario' className='prueba'><button className="b1" id="btn">Reporte de Inventario</button></Link>
+          </div>
+          <div className="button-container">
+            <button className="b4" onClick={mostrarGraficoHandler}>
+              Resumen %</button>
+            <div className={`grafico${mostrarGrafico ? '' : ' oculto'}`}>
+              <br />
+              <canvas ref={canvasRef}></canvas>
+>>>>>>> mod_ventas
             </div>
           </div>
         </div>
@@ -154,7 +200,7 @@ function Informe() {
             nombreEmpleado: 'Luicia Martinez',
             totalMenosCosto: '-$37.500',
             totalMenosCosto2: '$212.000',
-          },{
+          }, {
             id: '103061',
             fecha: '19/03/2023',
             totalVenta: '$250.000',
@@ -228,7 +274,7 @@ function Informe() {
           </button>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

@@ -101,6 +101,7 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
                                 <ul className={`sub-menu-options${showSubMenu === 'usuarios' ? ' active' : ''}`}>
                                     <li><Link to="/GestionUsuarios/TablaUsuarios">
                                         <div className='circle__sidemenu'></div>
+<<<<<<< HEAD
                                         <span>Usuarios</span>
                                     </Link></li>
                                     <li><Link to="/GestionUsuarios/TablaProveedores">
@@ -111,6 +112,18 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
                                         <div className='circle__sidemenu'></div>
                                         <span>Deudores</span>
                                     </Link></li>
+=======
+                                        <span>Usuarios</span></Link>
+                                    </li>
+                                    <li><Link to="/GestionUsuarios/TablaProveedores">
+                                        <div className='circle__sidemenu'></div>
+                                        <span>Proveedores</span></Link>
+                                    </li>
+                                    <li><Link to="/GestionUsuarios/TablaDeudores">
+                                        <div className='circle__sidemenu'></div>
+                                        <span>Deudores</span></Link>
+                                    </li>
+>>>>>>> mod_ventas
                                 </ul>
                             </li>
 
@@ -125,6 +138,7 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
                                     </div>
                                 </Link>
                                 <ul className={`sub-menu-options${showSubMenu === 'inventario' ? ' active' : ''}`}>
+<<<<<<< HEAD
                                 <li><Link to="/Inventario/TablaInventario">
                                     <div className='circle__sidemenu'></div>
                                     <span>Gestion de Productos</span>
@@ -133,6 +147,12 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
                                     <div className='circle__sidemenu'></div>
                                     <span>Item 2</span>
                                 </Link></li>
+=======
+                                    <li><Link to="/Inventario/TablaInventario">
+                                        <div className='circle__sidemenu'></div>
+                                        <span>Gestion de Productos</span></Link>
+                                    </li>
+>>>>>>> mod_ventas
                                 </ul>
                             </li>
 
@@ -152,7 +172,7 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
                                         <div className='circle__sidemenu'></div>
                                         <span>Ventas</span>
                                     </Link></li>
-                                    <li ><Link to="/VentasFacturacion/Item2">
+                                    <li ><Link to="/VentasFacturacion/tabs">
                                         <div className='circle__sidemenu'></div>
                                         <span>Lista de ventas</span>
                                     </Link></li>
