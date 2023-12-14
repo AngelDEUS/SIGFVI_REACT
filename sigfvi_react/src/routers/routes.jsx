@@ -12,6 +12,13 @@ import Ventas from '../pages-views/mod_Ventas-Facturacion/main_ventas'
 
 import Informes from '../pages-views/mod_Informes/main_informes';
 import Ayuda from '../pages-views/Ayuda/MainAyuda';
+import Informe from '../pages-views/mod_Informes/Informe';
+
+import InformeVentas from '../pages-views/mod_Informes/InformeVentas';
+import InformeDeudores from '../pages-views/mod_Informes/InformeDeudores';
+import InformeInventario from '../pages-views/mod_Informes/InformeInventario';
+import InformeEmpleados from '../pages-views/mod_Informes/InformeEmpleados';
+
 
 
 export function MyRoutes({ onLogin }) {
@@ -26,7 +33,11 @@ export function MyRoutes({ onLogin }) {
             <Route path='/VentasFacturacion' element={<VentasFacturacion />} />
             <Route path='/VentasFacturacion/ventas' element={<Ventas />} />
 
-            <Route path='/Informes' element={<Informes />} />
+            <Route path='/Informes' element={<Informe/>} />
+            <Route path='/GestionInformes/InformeVentas' element={<InformeVentas/>} />
+            <Route path='/GestionInformes/InformeDeudores' element={<InformeDeudores/>} />
+            <Route path='/GestionInformes/InformeEmpleados' element={<InformeEmpleados/>} />
+            <Route path='/GestionInformes/InformeInventario' element={<InformeInventario/>} />
             <Route path='/Ayuda' element={<Ayuda />} />
             <Route path='*' element={<Erro404 />} />
             <Route path='/' element={<LoginMain onLogin={onLogin} />} />
