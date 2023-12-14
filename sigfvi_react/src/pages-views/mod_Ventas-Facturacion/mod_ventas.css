@@ -7,6 +7,8 @@
     --Color-bg-buscar-01: #ffffff;
     --Color-bg-buscar-02: #dbdcde;
 
+    --Color-bg-separador-01: #c6c3c9;
+
     --Color-btn-texts: #ffffff;
     --Color-btn-01-abrir: #fc7c02;
     --Color-btn-02-limpiar: #5cb0ff;
@@ -20,11 +22,24 @@
     background-color: var(--Color-bg-buscar-02);
     border-radius: 15px;
     display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
 }
 
 .buscar_productos {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+}
+
+.right__b,
+.left__b {
+    display: flex;
+}
+
+.left__b {
+    margin-left: auto;
+    /* Empuja los elementos hacia la derecha */
 }
 
 /* ---------: Buscar -----> */
@@ -32,36 +47,76 @@
     background-color: var(--Color-bg-buscar-01);
     padding: 10px;
     display: flex;
-    width: 350px;
+    width: 500px;
+    height: 50px;
     border-radius: 15px;
 }
 
+
+
 .buscar_i {
-    margin: 0;
-    padding: 0;
+    height: 25px;
+    font-size: 20px;
     color: var(--Color-bg-buscar-02);
-    border: 1px solid var(--Color-bg-buscar-02);
+    align-self: center;
 }
 
-.sep_vertical_b {
-    width: 2px;
-    height: 20px;
-    margin: 0 10px;
-    background-color: var(--Color-bg-buscar-02);
-}
 
 .right__b input {
     color: var(--Color-input-01);
     outline: none;
     padding: 10px;
-    width: 500px;
+    width: 100%;
 }
 
 .right__b input::placeholder {
     color: var(--Color-input-02);
 }
 
+
+/* Separador */
+.sep_vertical_b,
+.sep_vertical_b--outS {
+    width: 2px;
+    height: 20px;
+    margin: 0 10px;
+    background-color: var(--Color-bg-buscar-02);
+    align-self: center;
+}
+
+.sep_vertical_b--outS {
+    background-color: var(--Color-bg-separador-01);
+
+}
+
 /* ---------: Botones-----> */
+
+/* Boton Buscar */
+.btn_buscar {
+    height: 100%;
+    margin: 0 10px;
+    padding: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--Color-bg-separador-01);
+    background-color: var(--Color-bg-buscar-01);
+    border: 1px solid var(--Color-bg-buscar-02);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn_buscar:hover {
+    color: var(--Color-bg-buscar-01);
+    border: 1px solid var(--Color-bg-buscar-01);
+    background-color: var(--Color-bg-separador-01);
+}
+
+.btn_buscar:active {
+    color: var(--Color-bg-buscar-02);
+    border: 1px solid var(--Color-bg-buscar-02);
+    background-color: var(--Color-bg-separador-02);
+
+}
+
 .btn_f {
     color: var(--Color-btn-texts);
     margin: 0 10px;
