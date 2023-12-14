@@ -20,6 +20,8 @@ import InformeInventario from '../pages-views/mod_Informes/InformeInventario';
 import InformeEmpleados from '../pages-views/mod_Informes/InformeEmpleados';
 
 
+import Tabla_inventario from "../pages-views/mod_inventario/tablaInventario";
+
 
 export function MyRoutes({ onLogin }) {
     return (
@@ -29,6 +31,7 @@ export function MyRoutes({ onLogin }) {
             <Route path='/Dashboard' element={<Dashboard />} />
             <Route path='/GestionUsuarios' element={<Usuarios />} />
             <Route path='/Inventario' element={<Inventario />} />
+            <Route path='/Inventario/TablaInventario' element={<Tabla_inventario />} />
 
             <Route path='/VentasFacturacion' element={<VentasFacturacion />} />
             <Route path='/VentasFacturacion/ventas' element={<Ventas />} />
