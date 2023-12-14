@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 const InformeVentas = () => {
   return (
-    <main>
+    <main className='contenedor_informe'>
       <h1>Informe de Ventas</h1>
       <p>
         Este es el módulo encargado de realizar los <s>Informes de las ventas</s> para generar un reporte de las ventas que se hacen.
@@ -11,7 +11,7 @@ const InformeVentas = () => {
       <hr/>
 
       <h2 style={{ textAlign: 'center' }}>Informe de Ventas</h2>
-      <Link to='/Informes'><button className="b1" id="btn" >Volver</button></Link>
+      <Link to='/Informes'><button className="bnt1" >Volver</button></Link>
       <table>
         <thead>
           <tr>

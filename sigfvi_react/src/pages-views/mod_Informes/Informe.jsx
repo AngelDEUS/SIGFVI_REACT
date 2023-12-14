@@ -62,7 +62,8 @@ function Informe() {
   };
 
   return (
-    <main>
+
+    <main className='contenedor_informe'>
       <h1>Informes</h1>
       <p>
         Este es el módulo encargado de realizar los <s>Informes</s> de los productos y generar los informes de cada reporte.
@@ -93,12 +94,12 @@ function Informe() {
 
         <div className="btones">
           <div className="button-container">
-          <Link to='/GestionInformes/InformeVentas'><button className="b1" id="btn" >Reporte de Ventas</button></Link>
-          <Link to='/GestionInformes/InformeVentas'><button className="b1" id="btn">Reporte de Empleados</button></Link>
+          <Link to='/GestionInformes/InformeVentas'className='prueba'><button className="b1" id="btn" >Reporte de Ventas</button></Link>
+          <Link to='/GestionInformes/InformeEmpleados'><button className="b1" id="btn">Reporte de Empleados</button></Link>
           </div>
           <div className="button-container">
           <Link to='/GestionInformes/InformeDeudores'><button className="b1" id="btn" >Reporte de Deudores</button></Link>
-          <Link to='/GestionInformes/InformeDeudores'><button className="b1" id="btn">Reporte de Empleados</button></Link>
+          <Link to='/GestionInformes/InformeInventario'><button className="b1" id="btn">Reporte de Inventario</button></Link>
           </div>
           <div className="button-container">
           <button className="b4" onClick={mostrarGraficoHandler}>

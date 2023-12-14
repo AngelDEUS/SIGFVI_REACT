@@ -11,7 +11,7 @@ function InformeDeudores() {
       </p>
       <hr />
       <h2 style={{ textAlign: 'center' }}>Informe Deudores</h2>
-      <Link to='/Informes'><button className="b1" id="btn" >Volver</button></Link>
+      <Link to='/Informes'><button className="bnt1" >Volver</button></Link>
       <table>
         <thead>
           <tr>
