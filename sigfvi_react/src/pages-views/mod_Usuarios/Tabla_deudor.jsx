@@ -1,27 +1,44 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tabla_deudor_item } from './Tabla_deudor_item';
 import datos from './data/DatosDeudor.json';
 import Register_deudor from './Register_deudor';
 import './Tabla.css';
+import TituloyDesc from '../../components/Titles/TituloyDesc';
 
 function Tabla_deudor() {
+
+  const url = 'http://localhost:3001/Deudores'
+
+  const [datos, setDatos] = useState()
+
+  const fetchApi = async () => {
+      const respuesta = await fetch(url); 
+      const respuestaJSON = await respuesta.json();
+      setDatos(respuestaJSON)
+  }
+
+    useEffect(()=>{
+        fetchApi();
+    },[])
 
   const [registerform, setRegisterform] = useState(false)
   
   return (
+    <>
+    <div>
+      <TituloyDesc 
+        titulo='Deudores'
+        descripcion='Esta pestaña muestra los deudores de la tienda los cuales estaran registrados aqui. Tambien se permite su actualizacion y edicion respectiva.'
+      />
+    </div>
     <div className='main-container'>
-        <div className='main-container'>
-      <h1 className='main-title'>Deudores</h1>
-      <p className='main-text'>
-        Esta pestaña muestra los deudores de la tienda los cuales estaran registrados aqui. Tambien se permite su actualizacion y edicion respectiva
-      </p><br/>
       <hr/>
       <div className='table-container'>
         <div className="option-container">
           <form className="form">
-            <div>
+            <div className='buscar'>
               <input type="search" id="search" name="search" placeholder="buscar" className='barra-buscar' />
-              <button className='boton b1'>Buscar</button>
+              <button type='button' className='boton b1'>Buscar</button>
             </div>
             <div className='teush'>
             <button type="button" className="boton b4" id="lanzar-modal" name="agregar" onClick={()=> setRegisterform(true)}>Agregar</button>
@@ -57,6 +74,7 @@ function Tabla_deudor() {
             </thead>
             <tbody>
               {
+                !datos ? 'Loading.....' :
                 datos.map((datos, index) => {
                   return(
                     <Tabla_deudor_item
@@ -76,7 +94,7 @@ function Tabla_deudor() {
         </section>
       </div>
     </div>
-    </div>
+    </>
   )
 }
 

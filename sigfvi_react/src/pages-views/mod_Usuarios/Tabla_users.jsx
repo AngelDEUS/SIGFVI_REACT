@@ -1,24 +1,42 @@
-import React, {  useState } from 'react';
-import datos from './data/DatosUser.json';
+import React, {  useEffect, useState } from 'react';
+// import datos from '../Login/DatosPrueba.json';
 import { Tabla_users_item } from './Tabla_users_item';
 import './Tabla.css';
 import { Register_user } from './Register_user';
+import TituloyDesc from '../../components/Titles/TituloyDesc'
 
 function Tabla_users() {
+
+  const url = 'http://localhost:3001/Usuarios'
+
+  const [datos, setDatos] = useState()
+
+  const fetchApi = async () => {
+      const respuesta = await fetch(url); 
+      const respuestaJSON = await respuesta.json();
+      setDatos(respuestaJSON)
+  }
+
+    useEffect(()=>{
+        fetchApi();
+    },[])
 
   const [registerform, setRegisterform] = useState(false)
   
   return (
+    <>
+    <div>
+      <TituloyDesc 
+        titulo='Usuarios'
+        descripcion='Muestra los Usuarios que hacen parte del sistema y permite su respectivo registro y actualizacion.'
+      />
+    </div>
     <div className='main-container'>
-      <h1 className='main-title'>Empleados</h1>
-      <p className='main-text'>
-        Esta parte del modulo muestra los empleados del sistema y permite su respectivo registro y actualizacion.
-      </p><br/>
       <hr/>
       <div className='table-container'>
         <div className="option-container">
           <form className="form">
-            <div>
+            <div className='buscar'>
               <input type="search" id="search" name="search" placeholder="buscar" className='barra-buscar' />
               <button className='boton b1'>Buscar</button>
             </div>
@@ -37,7 +55,16 @@ function Tabla_users() {
                     <h2>Nombre</h2>
                 </th>
                 <th>
-                    <h2>id</h2>
+                    <h2>Tipo Id</h2>
+                </th>
+                <th>
+                    <h2>Id</h2>
+                </th>
+                <th>
+                    <h2>Tipo de Usuario</h2>
+                </th>
+                <th>
+                    <h2>Apodo</h2>
                 </th>
                 <th>
                     <h2>Contraseña</h2>
@@ -57,17 +84,21 @@ function Tabla_users() {
             </thead>
             <tbody>
               {
+                !datos ? 'Loading.....' :
                 datos.map((datos, index) => {
                   return(
                     <Tabla_users_item 
                       key={datos.id}
                       id={datos.id}
-                      name={datos.first_name}
-                      last_name={datos.last_name}
-                      password={datos.pass}
-                      cel={datos.cel}
+                      tipoid={datos.tipoIdentificacion}
+                      tipouser={datos.tipoUsuario}
+                      name={datos.nombres}
+                      last_name={datos.apellidos}
+                      nick={datos.apodo}
+                      password={datos.contrasena}
+                      cel={datos.numeroContacto}
                       email={datos.email}
-                      state={datos.status}
+                      state={datos.estado}
                       />
                   )
                 })
@@ -77,6 +108,7 @@ function Tabla_users() {
         </section>
       </div>
     </div>
+    </>
   )
 }
 

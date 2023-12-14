@@ -35,7 +35,16 @@ export const Tabla_users_item = (props) => {
             <h3>{props.name +" "+ props.last_name}</h3>
         </td>
         <td>
+            <h3>{props.tipoid}</h3>
+        </td>
+        <td>
             <h3>{props.id}</h3>
+        </td>
+        <td>
+            <h3>{props.tipouser}</h3>
+        </td>
+        <td>
+            <h3>{props.nick}</h3>
         </td>
         <td>
             <h3>{props.password}</h3>
