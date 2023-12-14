@@ -9,7 +9,7 @@ function Tabla_users() {
 
   const url = 'http://localhost:3001/Usuarios'
 
-  const [datos, setDatos] = useState()
+  const [datos, setDatos] = useState([])
 
   const fetchApi = async () => {
       const respuesta = await fetch(url); 
@@ -19,7 +19,24 @@ function Tabla_users() {
 
     useEffect(()=>{
         fetchApi();
-    },[])
+    },[]);
+
+    const handleAddUser = (id,tipoid/*,tipouser*/,nombre1,nombre2,apel1,apel2,email,pass) => {
+      
+      const newUser = {
+        "id": id,
+        "tipoIdentificacion": tipoid,
+        "tipoUsuario": "Empleado",
+        "nombres": nombre1+" "+nombre2,
+        "apellidos": apel1+" "+apel2,
+        "numeroContacto": "12345678901",
+        "apodo": "Admon",
+        "email": email,
+        "contrasena": pass,
+        "estado": "Activo"
+      }
+      setDatos([...datos, newUser])
+    }
 
   const [registerform, setRegisterform] = useState(false)
   
@@ -43,7 +60,7 @@ function Tabla_users() {
             <div className='teush'>
               <button type="button" className="boton b4" id="lanzar-modal" name="agregar" onClick={()=> setRegisterform(true)}>Agregar</button>
             </div>
-            <Register_user isOpen={registerform} closeModal={()=> setRegisterform(false)}/>
+            <Register_user isOpen={registerform} closeModal={()=> setRegisterform(false)} funcion={handleAddUser}/>
 
           </form>
         </div>

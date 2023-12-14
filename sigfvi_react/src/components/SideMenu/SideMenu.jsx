@@ -5,7 +5,6 @@ import LogoTiendecita from '../../assets/Logo/LogoMid_01.png';
 import imagenUsuario from '../../assets/Usuarios/Login-User-1.jpg';
 import Navbar from './Navbar/Navbar';
 import './SideMenu.css';
-import handleLogin from '../../pages-views/Login/LoginMain'
 
 function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
     const [isSessionClosed, setSessionClosed] = useState(false);

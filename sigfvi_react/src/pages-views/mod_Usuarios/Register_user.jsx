@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 
 
-export const Register_user = ({isOpen, closeModal}) => {
+export const Register_user = ({isOpen, closeModal, funcion}) => {
    
+    const [numid,setNumid] = useState('');
+    const [tipoid,setTipoid] = useState('');
+    const [name1,setName1] = useState('');
+    const [name2,setName2] = useState('');
+    const [apell1,setApell1] = useState('');
+    const [apell2,setApell2] = useState('');
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
+
     if(!isOpen) return null ;
 
     function Verificar_nombre1(){
@@ -110,7 +119,7 @@ export const Register_user = ({isOpen, closeModal}) => {
             document.getElementById('wrongid').textContent='Este espacio no puede quedar en blanco';
             con=false;
         }else{
-            if(TipoId==='1' || TipoId==='4'){
+            if(TipoId==='CC' || TipoId==='TI'){
                 if(validacionNM.test(Inid)){
                     document.getElementById('wrongid').textContent='Digitar solo Numeros';
                     con=false;
@@ -256,6 +265,7 @@ export const Register_user = ({isOpen, closeModal}) => {
                 text:'Registro completado. Bienvenido '+document.getElementById('name1').value,
             }).then(function(){
                 closeModal();
+                funcion(numid,tipoid,/*,tipouser*/name1,name2,apell1,apell2,email,password);
             })
             return true;
             
@@ -282,41 +292,41 @@ export const Register_user = ({isOpen, closeModal}) => {
                 <form className="datos-contenido">
                     <span>
                         <label for="name1">Primer Nombre</label>
-                        <input className='input-form' type="text" name="name1" id="name1" placeholder="Primer Nombre" onBlur={Verificar_nombre1} />
+                        <input className='input-form' type="text" name="name1" id="name1" placeholder="Primer Nombre" onBlur={Verificar_nombre1} onChange={(e) => setName1(e.target.value)} />
                         <p id="wrongname1"></p>
                     </span>
                     <span>
                         <label for="name2">Segundo Nombre</label>
-                        <input className='input-form' type="text" name="name2" id="name2" placeholder="Segundo Nombre" onBlur={Verificar_nombre2} />
+                        <input className='input-form' type="text" name="name2" id="name2" placeholder="Segundo Nombre" onBlur={Verificar_nombre2} onChange={(e) => setName2(e.target.value)} />
                         <p id="wrongname2"></p>
                     </span>
                     
                     <span>
                         <label for="apell1">Primer Apellido</label>
-                        <input className='input-form' type="text" name="apell1" id="apell1" placeholder="Primer Apellido" onBlur={Verificar_apell1} />
+                        <input className='input-form' type="text" name="apell1" id="apell1" placeholder="Primer Apellido" onBlur={Verificar_apell1} onChange={(e) => setApell1(e.target.value)} />
                         <p id="wrongapell1"></p>
                     </span>
                     <span>
                         <label for="apell2">Segundo Apellido</label>
-                        <input className='input-form' type="text" name="apell2" id="apell2" placeholder="Segundo Apellido" onBlur={Verificar_apell2} />
+                        <input className='input-form' type="text" name="apell2" id="apell2" placeholder="Segundo Apellido" onBlur={Verificar_apell2} onChange={(e) => setApell2(e.target.value)} />
                         <p id="wrongapell2"></p>
                     </span>
                     
                     <span>
                         <label for="tipoid">Tipo de Identificación</label>
-                        <select className='input-form' name="tipoid" id="tipoid" onBlur={Verificar_tipoid}>
+                        <select className='input-form' name="tipoid" id="tipoid" onBlur={Verificar_tipoid} onChange={(e) => setTipoid(e.target.value)}>
                             <option value="0">Seleccionar</option>
-                            <option value="1">Cedula de Ciudadania</option>
-                            <option value="2">Cedula Extranjera</option>
-                            <option value="3">Pasaporte</option>
-                            <option value="4">Tarjeta de identidad</option>
+                            <option value="CC">Cedula de Ciudadania</option>
+                            <option value="CE">Cedula Extranjera</option>
+                            <option value="PP">Pasaporte</option>
+                            <option value="TI">Tarjeta de identidad</option>
                         </select>
                         <p id="wrongtipoid"></p>
                     </span>
 
                     <span>
                         <label for="numid">Número de Identificación</label>
-                        <input className='input-form' type="text" name="numid" id="numid" placeholder="Identificación" onBlur={Verificar_id} />
+                        <input className='input-form' type="text" name="numid" id="numid" placeholder="Identificación" onBlur={Verificar_id} onChange={(e) => setNumid(e.target.value)} />
                         <p id="wrongid"></p>
                     </span>
                     
@@ -327,13 +337,13 @@ export const Register_user = ({isOpen, closeModal}) => {
                     </span>
                     <span>
                         <label for="email">Correo Electronico</label>
-                        <input className='input-form' type="email" name="email" id="email" placeholder="Correo" onBlur={Verificar_email} />
+                        <input className='input-form' type="email" name="email" id="email" placeholder="Correo" onBlur={Verificar_email} onChange={(e) => setEmail(e.target.value)} />
                         <p id="wrongemail"></p>
                     </span>
                     
                     <span>
                         <label for="password">Contraseña</label>
-                        <input className='input-form' type="password" name="password" id="password" placeholder="Contraseña" onKeyUp={Verificar_password} onBlur={Verificar_password} />
+                        <input className='input-form' type="password" name="password" id="password" placeholder="Contraseña" onKeyUp={Verificar_password} onBlur={Verificar_password} onChange={(e) => setPassword(e.target.value)}/>
                         <p id="wrongpass"></p>
                     </span>
                     <span>
