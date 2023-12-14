@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 
-const Register_deudor = ({isOpen, closeModal}) => {
+const Register_deudor = ({isOpen, closeModal, funcion}) => {
+
+    const [id,setId] = useState('');
+    const [name,setName] = useState('');
+    const [address,setAddress] = useState('');
+    const [tel,setTel] = useState('');
     
     if(!isOpen) return null ;
 
@@ -114,6 +119,7 @@ const Register_deudor = ({isOpen, closeModal}) => {
                 text:'Registro completado. Se ha registrado a: '+document.getElementById('name').value,
             }).then(function(){
                 closeModal();
+                funcion(id,name,address,tel)
             })
             return true;
             
@@ -141,25 +147,25 @@ const Register_deudor = ({isOpen, closeModal}) => {
                     <span>
                         <br/><br/>
                         <label for="idp">identificacion</label>
-                        <input className='input-form' type="text" name="id" id="idp" placeholder="id" onBlur={Verificar_id} />
+                        <input className='input-form' type="text" name="id" id="idp" placeholder="id" onBlur={Verificar_id} onChange={(e) => setId(e.target.value)} />
                         <p id="wrongid"></p>
                     </span>
                     <span>
                         <br/><br/>
                         <label for="name">Nombre</label>
-                        <input className='input-form' type="text" name="name" id="name" placeholder="Nombre"  onBlur={Verificar_name} />
+                        <input className='input-form' type="text" name="name" id="name" placeholder="Nombre"  onBlur={Verificar_name} onChange={(e) => setName(e.target.value)} />
                         <p id="wrongname"></p>
                     </span>
                     <span>
                         <br/><br/>
                         <label for="cel">Numero de Telefono</label>
-                        <input className='input-form' type="number" name="cel" id="cel" placeholder="Numero"  onBlur={Verificar_cel} />
+                        <input className='input-form' type="number" name="cel" id="cel" placeholder="Numero"  onBlur={Verificar_cel} onChange={(e) => setTel(e.target.value)} />
                         <p id="wrongcel"></p>
                     </span>
                     <span>
                         <br/><br/>
                         <label for="frecuencia">Dirección</label>
-                        <input className='input-form' type="text" name="Direccion" id="Direccion" placeholder="Dirección" onBlur={Verificar_addres} />
+                        <input className='input-form' type="text" name="Direccion" id="Direccion" placeholder="Dirección" onBlur={Verificar_addres} onChange={(e) => setAddress(e.target.value)}/>
                         <p id="wrongaddres"></p>
                     </span>
                     <span class="bloc">

@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 
-const Register_proveedor = ({isOpen, closeModal}) => {
+const Register_proveedor = ({isOpen, closeModal, funcion}) => {
+
+    const [id,setId] = useState('');
+    const [empre,setEmpre] = useState('');
+    const [tel,setTel] = useState('');
+    const [frecuencia,setFrecuencia] = useState('');
 
     if(!isOpen) return null ;
 
@@ -109,6 +114,7 @@ const Register_proveedor = ({isOpen, closeModal}) => {
                 text:'Registro completado para: '+document.getElementById('name1').value,
             }).then(function(){
                 closeModal();
+                funcion(id,empre,tel,frecuencia);
             })
             return true;
             
@@ -134,33 +140,33 @@ const Register_proveedor = ({isOpen, closeModal}) => {
                     <span class="bloc">
                         <br/><br/>
                         <label for="idp">Identificacion</label>
-                        <input className='input-form' type="text" name="idp" id="idp" placeholder="Nombre" onBlur={Verificar_id} />
+                        <input className='input-form' type="text" name="idp" id="idp" placeholder="Nombre" onBlur={Verificar_id} onChange={(e) => setId(e.target.value)} />
                         <p id="wrongid"></p>
                     </span>
                     <span class="bloc">
                         <br/><br/>
                         <label for="name1">Nombre</label>
-                        <input className='input-form' type="text" name="name1" id="name1" placeholder="Nombre" onBlur={Verificar_nombre} />
+                        <input className='input-form' type="text" name="name1" id="name1" placeholder="Nombre" onBlur={Verificar_nombre} onChange={(e) => setEmpre(e.target.value)} />
                         <p id="wrongname"></p>
                     </span>
                     <span class="bloc">
                         <br/><br/>
                         <label for="cel">Numero de Telefono</label>
-                        <input className='input-form' type="number" name="cel" id="cel" placeholder="Numero" onBlur={Verificar_cel} />
+                        <input className='input-form' type="number" name="cel" id="cel" placeholder="Numero" onBlur={Verificar_cel} onChange={(e) => setTel(e.target.value)} />
                         <p id="wrongcel"></p>
                     </span>
                     <span class="bloc">
                         <br/><br/>
                         <label for="frecuencia">Días que frecuenta:</label>
-                        <select className='input-form' name="frecuencia"  id="frecuencia" onBlur={Verificar_dias} >
+                        <select className='input-form' name="frecuencia"  id="frecuencia" onBlur={Verificar_dias} onChange={(e) => setFrecuencia(e.target.value)} >
                             <option value="0">Seleccionar</option>
-                            <option value="1">Lunes</option>
-                            <option value="2">Martes</option>
-                            <option value="3">Miercoles</option>
-                            <option value="4">Jueves</option>
-                            <option value="5">Viernes</option>
-                            <option value="6">Sabado</option>
-                            <option value="7">Domingo</option>
+                            <option value="Lunes">Lunes</option>
+                            <option value="Martes">Martes</option>
+                            <option value="Miercoles">Miercoles</option>
+                            <option value="Jueves">Jueves</option>
+                            <option value="Viernes">Viernes</option>
+                            <option value="Sabado">Sabado</option>
+                            <option value="Domingo">Domingo</option>
                         </select>
                         <p id="wrongfrec"></p>
                     </span>

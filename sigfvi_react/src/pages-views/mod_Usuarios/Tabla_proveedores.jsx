@@ -21,6 +21,17 @@ function Tabla_proveedores() {
         fetchApi();
     },[])
 
+    const handleAddProve = (id,empre,tel,frecuencia) => {
+      const newProve = {
+        "id": id,
+        "Nombre": empre,
+        "Dirección": 'cra 0 # 0-0',
+        "Telefono": tel,
+        "Frecuencia": frecuencia,
+        "Estado": "Activo"
+      }
+      setDatos([...datos, newProve])
+    }
 
   const [registerform, setRegisterform] = useState(false)
 
@@ -45,7 +56,7 @@ function Tabla_proveedores() {
             <button type="button" className="boton b4" id="lanzar-modal" name="agregar" onClick={()=> setRegisterform(true)}>Agregar</button>
             </div>
           </form>
-          <Register_proveedor isOpen={registerform} closeModal={()=> setRegisterform(false)} />
+          <Register_proveedor isOpen={registerform} closeModal={()=> setRegisterform(false)} funcion={handleAddProve} />
         </div>
 
         <section className="table__body">

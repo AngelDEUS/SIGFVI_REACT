@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Tabla_deudor_item } from './Tabla_deudor_item';
-import datos from './data/DatosDeudor.json';
+// import datos from './data/DatosDeudor.json';
 import Register_deudor from './Register_deudor';
 import './Tabla.css';
 import TituloyDesc from '../../components/Titles/TituloyDesc';
@@ -20,6 +20,18 @@ function Tabla_deudor() {
     useEffect(()=>{
         fetchApi();
     },[])
+
+    const handleAddDeudor = (id,name,address,tel,deuda) =>{
+      const newDeudor = {
+        "id": id,
+        "Nombre": name,
+        "Direccion": address,
+        "Telefono": tel,
+        "Deuda": 0,
+        "Estado": "Activo"
+      }
+      setDatos([...datos, newDeudor])
+    }
 
   const [registerform, setRegisterform] = useState(false)
   
@@ -43,7 +55,7 @@ function Tabla_deudor() {
             <div className='teush'>
             <button type="button" className="boton b4" id="lanzar-modal" name="agregar" onClick={()=> setRegisterform(true)}>Agregar</button>
             </div>
-            <Register_deudor isOpen={registerform} closeModal={()=> setRegisterform(false)} />
+            <Register_deudor isOpen={registerform} closeModal={()=> setRegisterform(false)} funcion={handleAddDeudor} />
           </form>
         </div>
 
