@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TituloyDesc from '../../components/Titles/TituloyDesc';
 
 
 function InformeDeudores() {
   return (
-    <main>
-      <h1>Informe de Deudores</h1>
-      <p>
-        Este es el módulo encargado de realizar los <s>Informes de los deudores</s> para generar un reporte de quienes están en la lista.
-      </p>
+    <main className='contenedor_informe'>
+      <TituloyDesc
+        titulo='Informe de Deudores'
+        descripcion='Este es el módulo encargado de realizar los Informes de los deudores</s> para generar un reporte de quienes están en la lista.'
+      />
       <hr />
       <h2 style={{ textAlign: 'center' }}>Informe Deudores</h2>
       <Link to='/Informes'><button className="bnt1" >Volver</button></Link>

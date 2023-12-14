@@ -5,6 +5,7 @@ import LogoTiendecita from '../../assets/Logo/LogoMid_01.png';
 import imagenUsuario from '../../assets/Usuarios/Login-User-1.jpg';
 import Navbar from './Navbar/Navbar';
 import './SideMenu.css';
+import handleLogin from '../../pages-views/Login/LoginMain'
 
 function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
     const [isSessionClosed, setSessionClosed] = useState(false);
@@ -99,9 +100,18 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
                                     </div>
                                 </Link>
                                 <ul className={`sub-menu-options${showSubMenu === 'usuarios' ? ' active' : ''}`}>
-                                    <li><Link to="/GestionUsuarios/TablaUsuarios">Usuarios</Link></li>
-                                    <li><Link to="/GestionUsuarios/TablaProveedores">Proveedores</Link></li>
-                                    <li><Link to="/GestionUsuarios/TablaDeudores">Deudores</Link></li>
+                                    <li><Link to="/GestionUsuarios/TablaUsuarios">
+                                        <div className='circle__sidemenu'></div>
+                                        <span>Usuarios</span>
+                                    </Link></li>
+                                    <li><Link to="/GestionUsuarios/TablaProveedores">
+                                        <div className='circle__sidemenu'></div>
+                                        <span>Proveedores</span>
+                                    </Link></li>
+                                    <li><Link to="/GestionUsuarios/TablaDeudores">
+                                        <div className='circle__sidemenu'></div>
+                                        <span>Deudores</span>
+                                    </Link></li>
                                 </ul>
                             </li>
 
@@ -116,8 +126,14 @@ function SideMenu({ miniBarraLateral, toggleMiniBarraLateral }) {
                                     </div>
                                 </Link>
                                 <ul className={`sub-menu-options${showSubMenu === 'inventario' ? ' active' : ''}`}>
-                                <li><Link to="/Inventario/TablaInventario">Gestion de Productos</Link></li>
-                                    <li><Link to="/Inventario/Item2">Item 2</Link></li>
+                                <li><Link to="/Inventario/TablaInventario">
+                                    <div className='circle__sidemenu'></div>
+                                    <span>Gestion de Productos</span>
+                                </Link></li>
+                                <li><Link to="/Inventario/Item2">
+                                    <div className='circle__sidemenu'></div>
+                                    <span>Item 2</span>
+                                </Link></li>
                                 </ul>
                             </li>
 

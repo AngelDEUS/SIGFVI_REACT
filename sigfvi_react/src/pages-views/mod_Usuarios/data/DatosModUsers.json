@@ -51,7 +51,7 @@
         {
             "id": 78901234506,
             "tipoIdentificacion": "CC",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Carlos Andres",
             "apellidos": "Lopez Martinez",
             "numeroContacto": "56789012345",
@@ -63,7 +63,7 @@
         {
             "id": 45678901207,
             "tipoIdentificacion": "CC",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Laura",
             "apellidos": "Hernandez Gonzalez",
             "numeroContacto": "67890123456",
@@ -75,7 +75,7 @@
         {
             "id": 89012345608,
             "tipoIdentificacion": "CE",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Pedro",
             "apellidos": "Ramirez Castaño",
             "numeroContacto": "78901234567",
@@ -87,7 +87,7 @@
         {
             "id": 12345098709,
             "tipoIdentificacion": "CC",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Maria",
             "apellidos": "Fernandez Gomez",
             "numeroContacto": "89012345678",
@@ -99,7 +99,7 @@
         {
             "id": 67890123410,
             "tipoIdentificacion": "CC",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Daniel",
             "apellidos": "Castillo Hernandez",
             "numeroContacto": "90123456789",
@@ -111,7 +111,7 @@
         {
             "id": 34567890111,
             "tipoIdentificacion": "CC",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Isabel",
             "apellidos": "Diaz Soto",
             "numeroContacto": "01234567890",
@@ -123,7 +123,7 @@
         {
             "id": 90123456712,
             "tipoIdentificacion": "CE",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Ricardo",
             "apellidos": "Alvarez Perez",
             "numeroContacto": "12345678901",
@@ -135,7 +135,7 @@
         {
             "id": 23456789013,
             "tipoIdentificacion": "CC",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Juliana",
             "apellidos": "Ortega Mendoza",
             "numeroContacto": "23456789012",
@@ -147,7 +147,7 @@
         {
             "id": 56789012314,
             "tipoIdentificacion": "CC",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Alejandro",
             "apellidos": "Vargas Gutierrez",
             "numeroContacto": "34567890123",
@@ -159,7 +159,7 @@
         {
             "id": 89012345615,
             "tipoIdentificacion": "CC",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Camila",
             "apellidos": "Molina Silva",
             "numeroContacto": "45678901234",
@@ -171,7 +171,7 @@
         {
             "id": 12345098716,
             "tipoIdentificacion": "CC",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Andres",
             "apellidos": "Fernandez Perez",
             "numeroContacto": "56789012345",
@@ -183,7 +183,7 @@
         {
             "id": 67890123417,
             "tipoIdentificacion": "CC",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Gabriela",
             "apellidos": "Rios Jimenez",
             "numeroContacto": "67890123456",
@@ -195,7 +195,7 @@
         {
             "id": 34567890118,
             "tipoIdentificacion": "CC",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Jorge",
             "apellidos": "Herrera Medina",
             "numeroContacto": "78901234567",
@@ -207,7 +207,7 @@
         {
             "id": 90123456719,
             "tipoIdentificacion": "CC",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Daniela",
             "apellidos": "Santos Castro",
             "numeroContacto": "89012345678",
@@ -219,7 +219,7 @@
         {
             "id": 23456789020,
             "tipoIdentificacion": "CE",
-            "tipoUsuario": "Deudor",
+            "tipoUsuario": "Empleado",
             "nombres": "Roberto",
             "apellidos": "Garcia Gonzalez",
             "numeroContacto": "90123456789",

@@ -26,7 +26,7 @@ const LoginMain = ({ onLogin }) => {
                 confirmButtonText: 'Aceptar',
             }).then((result) => {
                 if (result.isConfirmed) {
-                    navigate('/Layout');
+                    navigate('/Dashboard');
                 }
             });
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import './Informes.css';
 import {Link} from 'react-router-dom';
+import TituloyDesc from '../../components/Titles/TituloyDesc';
 
 function Informe() {
   const [fechaInicio, setFechaInicio] = useState('');
@@ -64,51 +65,62 @@ function Informe() {
   return (
 
     <main className='contenedor_informe'>
-      <h1>Informes</h1>
-      <p>
-        Este es el módulo encargado de realizar los <s>Informes</s> de los productos y generar los informes de cada reporte.
-      </p>
-      <br />
+      <TituloyDesc
+        titulo='Informes'
+        descripcion='Este es el módulo encargado de realizar los Informes de los productos y generar los informes de cada reporte.'
+      />
+      
+      
       <hr />
-      <section className="mod__Ventas">
-        <div className="venta">
-          <h2>Escoger Rango de Fechas (Desde/Hasta)</h2>
-          <label htmlFor="fecha-inicio">Fecha de inicio:</label>
-          <input
-            type="date"
-            id="fecha-inicio"
-            name="fecha-inicio"
-            onChange={(e) => setFechaInicio(e.target.value)}
-          />
+      <section className="">
+        <div className='mod__Ventas'>
+          <div className="venta">
+            <div>
+              <h2>Escoger Rango de Fechas (Desde/Hasta)</h2><br />
+            </div>
+            <div>
+              <div>
+                <label htmlFor="fecha-inicio">Fecha de inicio:</label>
+                <input
+                  type="date"
+                  id="fecha-inicio"
+                  name="fecha-inicio"
+                  onChange={(e) => setFechaInicio(e.target.value)}
+                />
+              </div>
+              <div>
+                <label htmlFor="fecha-fin">Fecha de fin:</label>
+                <input
+                  type="date"
+                  id="fecha-fin"
+                  name="fecha-fin"
+                  onChange={(e) => setFechaFin(e.target.value)}
+                />
+              </div>
+            </div>
 
-          <label htmlFor="fecha-fin">Fecha de fin:</label>
-          <input
-            type="date"
-            id="fecha-fin"
-            name="fecha-fin"
-            onChange={(e) => setFechaFin(e.target.value)}
-          />
-
-          <button onClick={mostrarRango}>Mostrar</button>
-        </div>
-
-        <div className="btones">
-          <div className="button-container">
-          <Link to='/GestionInformes/InformeVentas'className='prueba'><button className="b1" id="btn" >Reporte de Ventas</button></Link>
-          <Link to='/GestionInformes/InformeEmpleados'><button className="b1" id="btn">Reporte de Empleados</button></Link>
+            <button onClick={mostrarRango} className='mostrar'>Mostrar</button>
           </div>
-          <div className="button-container">
-          <Link to='/GestionInformes/InformeDeudores'><button className="b1" id="btn" >Reporte de Deudores</button></Link>
-          <Link to='/GestionInformes/InformeInventario'><button className="b1" id="btn">Reporte de Inventario</button></Link>
-          </div>
-          <div className="button-container">
-          <button className="b4" onClick={mostrarGraficoHandler}>
-              Resumen %</button>
-            <div className={`grafico${mostrarGrafico ? '' : ' oculto'}`}>
-              <br />
-              <canvas ref={canvasRef}></canvas>
+
+          <div className="btones">
+            <div className="button-container">
+            <Link to='/GestionInformes/InformeVentas'className='prueba'><button className="b1" id="btn" >Reporte de Ventas</button></Link>
+            <Link to='/GestionInformes/InformeEmpleados'><button className="b1" id="btn">Reporte de Empleados</button></Link>
+            {/* </div>
+            <div className="button-container"> */}
+            <Link to='/GestionInformes/InformeDeudores'><button className="b1" id="btn" >Reporte de Deudores</button></Link>
+            <Link to='/GestionInformes/InformeInventario'><button className="b1" id="btn">Reporte de Inventario</button></Link>
+            </div>
+            <div className="button-container">
+            <button className="b4" onClick={mostrarGraficoHandler}>
+                Resumen %</button>
+              
             </div>
           </div>
+        </div>
+        <div className={`grafico${mostrarGrafico ? '' : ' oculto'}`}>
+              <br />
+              <canvas ref={canvasRef}></canvas>
         </div>
       </section>
 

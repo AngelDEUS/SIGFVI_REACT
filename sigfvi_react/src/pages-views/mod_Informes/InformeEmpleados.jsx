@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
+import TituloyDesc from '../../components/Titles/TituloyDesc';
 
 function InformeEmpleados() {
   const [fechaInicio, setFechaInicio] = useState('');
@@ -11,10 +12,10 @@ function InformeEmpleados() {
 
   return (
     <main className='contenedor_informe'>
-      <h1>Informe de Empleados</h1>
-      <p>
-        Este es el módulo encargado de realizar los <s>Informes de los empleados</s> para generar un reporte o control de ellos.
-      </p>
+      <TituloyDesc
+        titulo='Informe de Empleados'
+        descripcion='Este es el módulo encargado de realizar los Informes de los empleados para generar un reporte o control de ellos.'
+      />
       <hr />
       <h2 style={{ textAlign: 'center' }}>Informe Empleados</h2>
       <Link to='/Informes'><button className="bnt1" >Volver</button></Link>

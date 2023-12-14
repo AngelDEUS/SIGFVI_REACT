@@ -1,13 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import TituloyDesc from '../../components/Titles/TituloyDesc';
 
 const InformeVentas = () => {
   return (
     <main className='contenedor_informe'>
-      <h1>Informe de Ventas</h1>
-      <p>
-        Este es el módulo encargado de realizar los <s>Informes de las ventas</s> para generar un reporte de las ventas que se hacen.
-      </p>
+      <TituloyDesc
+        titulo='Informe de Ventas'
+        descripcion='Este es el módulo encargado de realizar los <s>Informes de las ventas</s> para generar un reporte de las ventas que se hacen.'
+      />
       <hr/>
 
       <h2 style={{ textAlign: 'center' }}>Informe de Ventas</h2>
