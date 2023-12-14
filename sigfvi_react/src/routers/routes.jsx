@@ -12,6 +12,7 @@ import Ventas from '../pages-views/mod_Ventas-Facturacion/main_ventas'
 
 import Informes from '../pages-views/mod_Informes/main_informes';
 import Ayuda from '../pages-views/Ayuda/MainAyuda';
+<<<<<<< HEAD
 import Informe from '../pages-views/mod_Informes/Informe';
 
 import InformeVentas from '../pages-views/mod_Informes/InformeVentas';
@@ -22,6 +23,11 @@ import InformeEmpleados from '../pages-views/mod_Informes/InformeEmpleados';
 
 import Tabla_inventario from "../pages-views/mod_inventario/tablaInventario";
 
+=======
+import Tabla_users from '../pages-views/mod_Usuarios/Tabla_users';
+import Tabla_proveedores from '../pages-views/mod_Usuarios/Tabla_proveedores';
+import Tabla_deudor from '../pages-views/mod_Usuarios/Tabla_deudor';
+>>>>>>> remotes/origin/mod_usuarios
 
 export function MyRoutes({ onLogin }) {
     return (
@@ -29,7 +35,10 @@ export function MyRoutes({ onLogin }) {
             <Route path='/Layout/*' element={<MainLayout onLogin={onLogin} />} />
             <Route path='/Home' element={<Home />} />
             <Route path='/Dashboard' element={<Dashboard />} />
-            <Route path='/GestionUsuarios' element={<Usuarios />} />
+            {/* <Route path='/GestionUsuarios' element={<Usuarios />} /> */}
+            <Route path='/GestionUsuarios/TablaUsuarios' element={<Tabla_users />} />
+            <Route path='/GestionUsuarios/TablaProveedores' element={<Tabla_proveedores />} />
+            <Route path='/GestionUsuarios/TablaDeudores' element={<Tabla_deudor />} />
             <Route path='/Inventario' element={<Inventario />} />
             <Route path='/Inventario/TablaInventario' element={<Tabla_inventario />} />
 
