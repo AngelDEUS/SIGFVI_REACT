@@ -13,6 +13,8 @@ import Ventas from '../pages-views/mod_Ventas-Facturacion/main_ventas'
 import Informes from '../pages-views/mod_Informes/main_informes';
 import Ayuda from '../pages-views/Ayuda/MainAyuda';
 
+import Tabla_inventario from "../pages-views/mod_inventario/tablaInventario";
+
 
 export function MyRoutes({ onLogin }) {
     return (
@@ -22,6 +24,7 @@ export function MyRoutes({ onLogin }) {
             <Route path='/Dashboard' element={<Dashboard />} />
             <Route path='/GestionUsuarios' element={<Usuarios />} />
             <Route path='/Inventario' element={<Inventario />} />
+            <Route path='/Inventario/TablaInventario' element={<Tabla_inventario />} />
 
             <Route path='/VentasFacturacion' element={<VentasFacturacion />} />
             <Route path='/VentasFacturacion/ventas' element={<Ventas />} />
